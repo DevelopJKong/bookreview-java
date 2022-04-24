@@ -9,6 +9,23 @@ public class FibonacciV1 {
         int num = s.nextInt();
         s.close(); // 사용하면 최대한 빨리 닫아 줍니다
         
+        int a = 1;
+        int b = 1;
+
+        int[] fibonacci = new int[num];
+        fibonacci[0] = a;
+        fibonacci[1] = b;
+
+        for (int i = 0; i < (num - 2); ++i) {
+            fibonacci[i + 2] = a + b;
+            a = b;
+            b = fibonacci[i + 2];
+        }
+
+        System.out.println("결과 : ");
+        for (int i = 0; i < num; ++i) {
+            System.out.println(fibonacci[i]);
+        }
 
     }
 }
